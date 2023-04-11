@@ -1,0 +1,90 @@
+.navbarBar {
+    height: 55px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .iconWrapper {
+        // background-color: red;
+        width: 55px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 32px;
+        cursor: pointer;
+        transition: 1s ease;
+    }
+
+    .activeIconWrapper {
+        transform: rotate(90deg);
+    }
+
+    .brandWrapper {
+        width: 110px;
+        height: 100%;
+        // background-color: orange;
+        color: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 5px;
+        justify-content: center;
+        align-content: center;
+        cursor: pointer;
+
+        .brandIcon {
+            color: white;
+            text-align: end;
+            font-size: 40px;
+            transform: translateY(4px);
+        }
+
+        .brandNameWrapper {
+            display: grid;
+            justify-content: flex-start;
+            align-content: center;
+            column-gap: 5px;
+            margin-right: 5px;
+            line-height: 16px;
+            font-weight: 500;
+            grid-template-areas:
+                "one two"
+                "three two";
+
+
+            .brandNameOne {
+                grid-area: one;
+                font-size: 14px;
+            }
+
+            .brandNameTwo {
+                grid-area: two;
+                font-size: 36px;
+                transform: translateY(6px);
+            }
+
+            .brandNameThree {
+                grid-area: three;
+                font-size: 14px;
+            }
+        }
+
+
+    }
+
+    .searchIcon {
+        // background-color: red;
+        width: 55px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+    }
+}
