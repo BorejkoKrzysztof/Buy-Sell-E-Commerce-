@@ -1,14 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './Navbar.module.scss'
 import { FiSearch } from 'react-icons/fi'
 import { RiShoppingBag2Fill, RiMenuFill } from 'react-icons/ri'
+import PromotionBar from './subComponents/PromotionBar/PromotionBar'
 
 function Navbar() {
 
+    const [promotionExists, setPromotionExists] = useState(false)
     const [activeMobileMenu, setActiveMobileMenu] = useState(false)
+
+    const checkPromotion = () => {
+        setPromotionExists(true)
+    }
+
+    useEffect(() => {
+        checkPromotion()
+    }, [])
 
     return (
         <>
+            {promotionExists ? <PromotionBar /> : <></>}
             <section className={styles.navbarBar}>
                 <div className={!activeMobileMenu ? `${styles.iconWrapper}` : `${styles.iconWrapper} ${styles.activeIconWrapper}`}
                     onClick={() => setActiveMobileMenu(prev => !prev)}>
@@ -28,7 +39,7 @@ function Navbar() {
             </section>
 
 
-            <section className={styles.navigation}>
+            <section className={!activeMobileMenu ? `${styles.navigationWrapper}` : `${styles.navigationWrapper} ${styles.activenNavigationWrapper}`}>
 
             </section>
         </>
