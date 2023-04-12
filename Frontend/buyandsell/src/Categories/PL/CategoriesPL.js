@@ -1,4 +1,4 @@
-export default categoriesPL = [
+export const categoriesPL = [
     {
         name: "Elektronika",
         subcategories: [
