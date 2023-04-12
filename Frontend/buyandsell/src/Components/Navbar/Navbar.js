@@ -20,7 +20,7 @@ function Navbar() {
     return (
         <>
             {promotionExists ? <PromotionBar /> : <></>}
-            <section className={styles.navbarBar}>
+            <section className={styles.navbarBar} style={promotionExists ? { top: '20px' } : { top: '0' }}>
                 <div className={!activeMobileMenu ? `${styles.iconWrapper}` : `${styles.iconWrapper} ${styles.activeIconWrapper}`}
                     onClick={() => setActiveMobileMenu(prev => !prev)}>
                     <RiMenuFill />
@@ -36,10 +36,11 @@ function Navbar() {
                 <div className={styles.searchIcon}>
                     <FiSearch />
                 </div>
-            </section>
+            </section >
 
 
-            <section className={!activeMobileMenu ? `${styles.navigationWrapper}` : `${styles.navigationWrapper} ${styles.activenNavigationWrapper}`}>
+            <section className={!activeMobileMenu ? `${styles.navigationWrapper}` : `${styles.navigationWrapper} ${styles.activenNavigationWrapper}`}
+                style={promotionExists ? { top: '75px' } : { top: '55px' }}>
 
             </section>
         </>
