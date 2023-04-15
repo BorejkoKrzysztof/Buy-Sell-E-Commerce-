@@ -10,13 +10,20 @@ function Navbar() {
 
     const [promotionExists, setPromotionExists] = useState(false)
     const [activeMobileMenu, setActiveMobileMenu] = useState(false)
+    const [searcherInput, setSearcherInput] = useState('')
 
-    const checkPromotion = () => {
+    const checkDiscount = () => {
+        // TODO: request to backend
         setPromotionExists(true)
     }
 
+    const handleNavbarSearcher = (event) => {
+        event.preventDefault()
+        console.log(`szukam ${searcherInput}`)
+    }
+
     useEffect(() => {
-        checkPromotion()
+        checkDiscount()
     }, [])
 
     return (
@@ -36,8 +43,13 @@ function Navbar() {
                     </div>
                 </div>
                 <div className={styles.iconsWrapper}>
-                    <div className={styles.searchIcon}>
-                        <FiSearch />
+                    <div className={styles.searchWrapper}>
+                        <form onSubmit={handleNavbarSearcher} className={styles.navbarForm}>
+                            <input className={styles.searcherInput} type='text' value={searcherInput} onChange={(event) => setSearcherInput(event.target.value)} />
+                            <button type='submit' className={styles.searchIcon}>
+                                <FiSearch />
+                            </button>
+                        </form>
                     </div>
                     <div className={styles.personIcon}>
                         <BsPerson />
