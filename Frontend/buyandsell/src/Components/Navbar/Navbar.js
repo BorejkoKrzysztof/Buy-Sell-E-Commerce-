@@ -8,13 +8,13 @@ import PromotionBar from './subComponents/PromotionBar/PromotionBar'
 
 function Navbar() {
 
-    const [promotionExists, setPromotionExists] = useState(false)
+    const [discountExists, setDiscountExists] = useState(false)
     const [activeMobileMenu, setActiveMobileMenu] = useState(false)
     const [searcherInput, setSearcherInput] = useState('')
 
     const checkDiscount = () => {
         // TODO: request to backend
-        setPromotionExists(true)
+        setDiscountExists(true)
     }
 
     const handleNavbarSearcher = (event) => {
@@ -28,8 +28,8 @@ function Navbar() {
 
     return (
         <>
-            {promotionExists ? <PromotionBar /> : <></>}
-            <section className={styles.navbarBar} style={promotionExists ? { top: '20px' } : { top: '0' }}>
+            {discountExists ? <PromotionBar /> : <></>}
+            <section className={styles.navbarBar} style={discountExists ? { top: '20px' } : { top: '0' }}>
                 <div className={!activeMobileMenu ? `${styles.menuIcon}` : `${styles.menuIcon} ${styles.activeMenuIcon}`}
                     onClick={() => setActiveMobileMenu(prev => !prev)}>
                     <RiMenuFill />
@@ -62,7 +62,7 @@ function Navbar() {
 
 
             <section className={!activeMobileMenu ? `${styles.navigationWrapper}` : `${styles.navigationWrapper} ${styles.activenNavigationWrapper}`}
-                style={promotionExists ? { top: '75px' } : { top: '55px' }}>
+                style={discountExists ? { top: '75px' } : { top: '55px' }}>
 
             </section>
         </>
