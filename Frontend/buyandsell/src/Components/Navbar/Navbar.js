@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import styles from './Navbar.module.scss'
 import { FiSearch } from 'react-icons/fi'
 import { RiShoppingBag2Fill, RiMenuFill } from 'react-icons/ri'
+import { AiOutlineShoppingCart } from 'react-icons/ai'
+import { BsPerson } from 'react-icons/bs'
 import PromotionBar from './subComponents/PromotionBar/PromotionBar'
 
 function Navbar() {
@@ -21,7 +23,7 @@ function Navbar() {
         <>
             {promotionExists ? <PromotionBar /> : <></>}
             <section className={styles.navbarBar} style={promotionExists ? { top: '20px' } : { top: '0' }}>
-                <div className={!activeMobileMenu ? `${styles.iconWrapper}` : `${styles.iconWrapper} ${styles.activeIconWrapper}`}
+                <div className={!activeMobileMenu ? `${styles.menuIcon}` : `${styles.menuIcon} ${styles.activeMenuIcon}`}
                     onClick={() => setActiveMobileMenu(prev => !prev)}>
                     <RiMenuFill />
                 </div>
@@ -33,8 +35,16 @@ function Navbar() {
                         <div className={styles.brandNameThree}>Sell</div>
                     </div>
                 </div>
-                <div className={styles.searchIcon}>
-                    <FiSearch />
+                <div className={styles.iconsWrapper}>
+                    <div className={styles.searchIcon}>
+                        <FiSearch />
+                    </div>
+                    <div className={styles.personIcon}>
+                        <BsPerson />
+                    </div>
+                    <div className={styles.basketIcon}>
+                        <AiOutlineShoppingCart />
+                    </div>
                 </div>
             </section >
 
