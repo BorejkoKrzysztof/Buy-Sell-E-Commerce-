@@ -7,6 +7,7 @@
     justify-content: space-between;
     align-items: center;
     position: fixed;
+    border-bottom: 3px goldenrod;
 
     .menuIcon {
         // background-color: red;
@@ -128,6 +129,10 @@
 
             .searchIcon {
                 margin: 0 5px;
+
+                &:hover {
+                    color: goldenrod;
+                }
             }
 
             .personIcon {
@@ -140,6 +145,10 @@
                 margin: 0 5px;
                 width: 55px;
                 height: 100%;
+
+                &:hover {
+                    color: goldenrod;
+                }
             }
 
             .basketIcon {
@@ -152,6 +161,10 @@
                 margin: 0 5px;
                 width: 55px;
                 height: 100%;
+
+                &:hover {
+                    color: goldenrod;
+                }
             }
         }
     }
