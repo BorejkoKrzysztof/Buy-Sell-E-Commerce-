@@ -1,13 +1,15 @@
+$backgroundColor: rgb(31, 29, 29);
+
 .navbarBar {
     height: 55px;
     width: 100%;
-    background-color: black;
+    background-color: $backgroundColor;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    border-bottom: 3px goldenrod;
+    border-bottom: 3px goldenrod solid;
 
     .menuIcon {
         // background-color: red;
@@ -123,6 +125,8 @@
 
     .navbarBar {
         justify-content: space-around;
+        height: 85px;
+
 
         .menuIcon {
             display: none;
@@ -140,7 +144,7 @@
                     display: flex;
 
                     .searcherInput {
-                        background-color: black;
+                        background-color: $backgroundColor;
                         border: none;
                         color: white;
                         border-bottom: solid 2px white;
@@ -151,7 +155,7 @@
                     }
 
                     .searchIcon {
-                        background-color: black;
+                        background-color: $backgroundColor;
                         border: none;
                         margin: 0 5px;
                         width: 55px;
