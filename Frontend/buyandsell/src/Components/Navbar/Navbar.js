@@ -34,18 +34,37 @@ function Navbar() {
                     onClick={() => setActiveMobileMenu(prev => !prev)}>
                     <RiMenuFill />
                 </div>
-                <div className={styles.brandWrapper}>
-                    <h1 className={styles.brandIcon}><RiShoppingBag2Fill /></h1>
-                    <div className={styles.brandNameWrapper}>
-                        <div className={styles.brandNameOne}>Buy</div>
-                        <div className={styles.brandNameTwo}>&</div>
-                        <div className={styles.brandNameThree}>Sell</div>
+                <div className={styles.mainNaviPart}>
+                    <div className={styles.brandWrapper}>
+                        <h1 className={styles.brandIcon}><RiShoppingBag2Fill /></h1>
+                        <div className={styles.brandNameWrapper}>
+                            <div style={{ fontFamily: 'Exo2-Regular' }}
+                                className={styles.brandNameOne}>Buy</div>
+                            <div className={styles.brandNameTwo}>&</div>
+                            <div style={{ fontFamily: 'Exo2-Regular' }}
+                                className={styles.brandNameThree}>Sell</div>
+                        </div>
+                    </div>
+                    <div className={styles.naviCategoriesWrapper}>
+                        <ul className={styles.naviCategoriesList}>
+                            <li style={{ fontFamily: 'Exo2-Regular' }}
+                                className={styles.naviCategoriesListItem}>Shop</li>
+                            <li style={{ fontFamily: 'Exo2-Regular' }}
+                                className={styles.naviCategoriesListItem}>Blog</li>
+                            <li style={{ fontFamily: 'Exo2-Regular' }}
+                                className={styles.naviCategoriesListItem}>Auctions</li>
+                            <li style={{ fontFamily: 'Exo2-Regular' }}
+                                className={styles.naviCategoriesListItem}>Sale</li>
+                        </ul>
                     </div>
                 </div>
                 <div className={styles.iconsWrapper}>
                     <div className={styles.searchWrapper}>
                         <form onSubmit={handleNavbarSearcher} className={styles.navbarForm}>
-                            <input className={styles.searcherInput} type='text' value={searcherInput} onChange={(event) => setSearcherInput(event.target.value)} />
+                            <input className={styles.searcherInput}
+                                type='text' value={searcherInput}
+                                placeholder='SEARCH...'
+                                onChange={(event) => setSearcherInput(event.target.value)} />
                             <button type='submit' className={styles.searchIcon}>
                                 <FiSearch />
                             </button>

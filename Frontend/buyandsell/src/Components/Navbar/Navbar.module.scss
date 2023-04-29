@@ -28,52 +28,63 @@ $backgroundColor: rgb(31, 29, 29);
         transform: rotate(90deg);
     }
 
-    .brandWrapper {
-        width: 110px;
-        height: 100%;
-        // background-color: orange;
-        color: white;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 5px;
-        justify-content: center;
-        align-content: center;
-        cursor: pointer;
+    .mainNaviPart {
 
-        .brandIcon {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .brandWrapper {
+            width: 110px;
+            height: 100%;
+            // background-color: orange;
             color: white;
-            text-align: end;
-            font-size: 40px;
-            transform: translateY(4px);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 5px;
+            justify-content: center;
+            align-content: center;
+            cursor: pointer;
+
+            .brandIcon {
+                color: white;
+                text-align: end;
+                font-size: 40px;
+                transform: translateY(4px);
+            }
+
+            .brandNameWrapper {
+                display: grid;
+                justify-content: flex-start;
+                align-content: center;
+                column-gap: 5px;
+                margin-right: 5px;
+                line-height: 16px;
+                font-weight: 500;
+                grid-template-areas:
+                    "one two"
+                    "three two";
+
+                .brandNameOne {
+                    grid-area: one;
+                    font-size: 14px;
+                }
+
+                .brandNameTwo {
+                    grid-area: two;
+                    font-size: 36px;
+                    transform: translateY(6px);
+                }
+
+                .brandNameThree {
+                    grid-area: three;
+                    font-size: 14px;
+                }
+            }
         }
 
-        .brandNameWrapper {
-            display: grid;
-            justify-content: flex-start;
-            align-content: center;
-            column-gap: 5px;
-            margin-right: 5px;
-            line-height: 16px;
-            font-weight: 500;
-            grid-template-areas:
-                "one two"
-                "three two";
-
-            .brandNameOne {
-                grid-area: one;
-                font-size: 14px;
-            }
-
-            .brandNameTwo {
-                grid-area: two;
-                font-size: 36px;
-                transform: translateY(6px);
-            }
-
-            .brandNameThree {
-                grid-area: three;
-                font-size: 14px;
-            }
+        .naviCategoriesWrapper {
+            display: none;
         }
     }
 
@@ -132,6 +143,40 @@ $backgroundColor: rgb(31, 29, 29);
             display: none;
         }
 
+        .mainNaviPart {
+            .naviCategoriesWrapper {
+                display: block;
+                width: auto;
+                height: 70px;
+                margin-left: 20px;
+                // background-color: red;
+                padding: 5px 10px;
+
+                .naviCategoriesList {
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    height: 100%;
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+                    // background-color: yellow;
+
+                    .naviCategoriesListItem {
+                        margin: 0 20px;
+                        font-size: 20px;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: goldenrod;
+                        }
+                    }
+                }
+            }
+        }
+
         .iconsWrapper {
             width: auto;
             display: flex;
@@ -148,6 +193,7 @@ $backgroundColor: rgb(31, 29, 29);
                         border: none;
                         color: white;
                         border-bottom: solid 2px white;
+                        width: 200px;
 
                         &:focus {
                             outline: none;
