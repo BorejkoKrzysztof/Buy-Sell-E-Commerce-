@@ -1,4 +1,5 @@
 $backgroundColor: rgb(31, 29, 29);
+$hoverFontColor: goldenrod;
 
 .navbarBar {
     height: 55px;
@@ -9,7 +10,7 @@ $backgroundColor: rgb(31, 29, 29);
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    border-bottom: 3px goldenrod solid;
+    border-bottom: 3px $hoverFontColor solid;
 
     .menuIcon {
         // background-color: red;
@@ -170,7 +171,7 @@ $backgroundColor: rgb(31, 29, 29);
                         cursor: pointer;
 
                         &:hover {
-                            color: goldenrod;
+                            color: $hoverFontColor;
                         }
                     }
                 }
@@ -214,7 +215,7 @@ $backgroundColor: rgb(31, 29, 29);
                         cursor: pointer;
 
                         &:hover {
-                            color: goldenrod;
+                            color: $hoverFontColor;
                         }
                     }
                 }
@@ -232,7 +233,7 @@ $backgroundColor: rgb(31, 29, 29);
                 height: 100%;
 
                 &:hover {
-                    color: goldenrod;
+                    color: $hoverFontColor;
                 }
             }
 
@@ -248,7 +249,7 @@ $backgroundColor: rgb(31, 29, 29);
                 height: 100%;
 
                 &:hover {
-                    color: goldenrod;
+                    color: $hoverFontColor;
                 }
             }
         }
