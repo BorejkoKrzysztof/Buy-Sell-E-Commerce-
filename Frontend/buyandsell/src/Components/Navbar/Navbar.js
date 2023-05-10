@@ -28,7 +28,7 @@ function Navbar() {
     }, [])
 
     return (
-        <>
+        <nav>
             {discountExists ? <PromotionBar /> : <></>}
             <section className={styles.navbarBar} style={discountExists ? { top: '20px' } : { top: '0' }}>
                 <div className={!activeMobileMenu ? `${styles.menuIcon}` : `${styles.menuIcon} ${styles.activeMenuIcon}`}
@@ -100,7 +100,7 @@ function Navbar() {
                 onMouseLeave={() => { setActiveDesktopSubMenu(false) }}>
 
             </section>
-        </>
+        </nav>
 
     )
 }
