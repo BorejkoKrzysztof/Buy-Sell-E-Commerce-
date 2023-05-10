@@ -10,6 +10,7 @@ function Navbar() {
 
     const [discountExists, setDiscountExists] = useState(false)
     const [activeMobileMenu, setActiveMobileMenu] = useState(false)
+    const [activeDesktopSubMenu, setActiveDesktopSubMenu] = useState(false)
     const [searcherInput, setSearcherInput] = useState('')
 
     const checkDiscount = () => {
@@ -48,13 +49,21 @@ function Navbar() {
                     <div className={styles.naviCategoriesWrapper}>
                         <ul className={styles.naviCategoriesList}>
                             <li style={{ fontFamily: 'Exo2-Regular' }}
-                                className={styles.naviCategoriesListItem}>Shop</li>
+                                className={styles.naviCategoriesListItem}
+                                onMouseEnter={() => { setActiveDesktopSubMenu(true) }}
+                                onMouseLeave={() => { setActiveDesktopSubMenu(false) }}>Shop</li>
                             <li style={{ fontFamily: 'Exo2-Regular' }}
-                                className={styles.naviCategoriesListItem}>Blog</li>
+                                className={styles.naviCategoriesListItem}
+                                onMouseEnter={() => { setActiveDesktopSubMenu(true) }}
+                                onMouseLeave={() => { setActiveDesktopSubMenu(false) }}>Blog</li>
                             <li style={{ fontFamily: 'Exo2-Regular' }}
-                                className={styles.naviCategoriesListItem}>Auctions</li>
+                                className={styles.naviCategoriesListItem}
+                                onMouseEnter={() => { setActiveDesktopSubMenu(true) }}
+                                onMouseLeave={() => { setActiveDesktopSubMenu(false) }}>Auctions</li>
                             <li style={{ fontFamily: 'Exo2-Regular' }}
-                                className={styles.naviCategoriesListItem}>Sale</li>
+                                className={styles.naviCategoriesListItem}
+                                onMouseEnter={() => { setActiveDesktopSubMenu(true) }}
+                                onMouseLeave={() => { setActiveDesktopSubMenu(false) }}>Sale</li>
                         </ul>
                     </div>
                 </div>
@@ -82,6 +91,13 @@ function Navbar() {
 
             <section className={!activeMobileMenu ? `${styles.navigationWrapper}` : `${styles.navigationWrapper} ${styles.activenNavigationWrapper}`}
                 style={discountExists ? { top: '75px' } : { top: '55px' }}>
+
+            </section>
+
+            <section className={!activeDesktopSubMenu ? `${styles.desktopSubMenu}` : `${styles.desktopSubMenu} ${styles.desktopSubMenuActive}`}
+                style={discountExists ? { top: '108px' } : { top: '88px' }}
+                onMouseEnter={() => { setActiveDesktopSubMenu(true) }}
+                onMouseLeave={() => { setActiveDesktopSubMenu(false) }}>
 
             </section>
         </>

@@ -1,0 +1,17 @@
+.wrapper {
+    background-color: silver;
+    min-height: 100vh;
+}
+
+
+@media screen and (min-width: 960px) {
+    .wrapper {
+        background-color: silver;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .wrapper {
+        background-color: rgb(218, 90, 90);
+    }
+}

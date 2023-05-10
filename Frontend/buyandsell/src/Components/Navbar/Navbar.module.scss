@@ -1,4 +1,5 @@
 $backgroundColor: rgb(31, 29, 29);
+$backgroundColorTransparent: rgba(31, 29, 29, 0.95);
 $hoverFontColor: goldenrod;
 
 .navbarBar {
@@ -133,6 +134,10 @@ $hoverFontColor: goldenrod;
     left: 0;
 }
 
+.desktopSubMenu {
+    display: none;
+}
+
 @media screen and (min-width: 960px) {
 
     .navbarBar {
@@ -148,10 +153,10 @@ $hoverFontColor: goldenrod;
             .naviCategoriesWrapper {
                 display: block;
                 width: auto;
-                height: 70px;
+                height: 90px;
                 margin-left: 20px;
                 // background-color: red;
-                padding: 5px 10px;
+                padding: 0 10px;
 
                 .naviCategoriesList {
                     display: flex;
@@ -164,10 +169,12 @@ $hoverFontColor: goldenrod;
                     // background-color: yellow;
 
                     .naviCategoriesListItem {
-                        margin: 0 20px;
+                        margin: 0 15px;
                         font-size: 20px;
                         text-transform: uppercase;
                         font-weight: 500;
+                        height: 90px;
+                        line-height: 90px;
                         cursor: pointer;
 
                         &:hover {
@@ -253,5 +260,17 @@ $hoverFontColor: goldenrod;
                 }
             }
         }
+    }
+
+    .desktopSubMenu {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 400px;
+        background-color: $backgroundColorTransparent;
+    }
+
+    .desktopSubMenuActive {
+        display: block;
     }
 }
