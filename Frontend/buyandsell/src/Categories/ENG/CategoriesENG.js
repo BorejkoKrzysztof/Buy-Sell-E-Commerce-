@@ -3,7 +3,7 @@ export const categoriesENG = [
         name: "Electronics",
         subcategories: [
             {
-                name: "Televisions and Electronics.",
+                name: "Televisions and Electronics",
                 subcategories: [
                     { name: "Televisions", subcategories: [] },
                     { name: "DVD/Blu-Ray Players", subcategories: [] },

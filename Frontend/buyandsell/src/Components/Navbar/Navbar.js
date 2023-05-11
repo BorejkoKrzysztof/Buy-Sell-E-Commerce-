@@ -5,6 +5,7 @@ import { RiShoppingBag2Fill, RiMenuFill } from 'react-icons/ri'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { BsPerson } from 'react-icons/bs'
 import PromotionBar from './subComponents/PromotionBar/PromotionBar'
+import { categoriesENG } from '../../Categories/ENG/CategoriesENG'
 
 function Navbar() {
 
@@ -53,9 +54,7 @@ function Navbar() {
                                 onMouseEnter={() => { setActiveDesktopSubMenu(true) }}
                                 onMouseLeave={() => { setActiveDesktopSubMenu(false) }}>Shop</li>
                             <li style={{ fontFamily: 'Exo2-Regular' }}
-                                className={styles.naviCategoriesListItem}
-                                onMouseEnter={() => { setActiveDesktopSubMenu(true) }}
-                                onMouseLeave={() => { setActiveDesktopSubMenu(false) }}>Blog</li>
+                                className={styles.naviCategoriesListItem}>Blog</li>
                             <li style={{ fontFamily: 'Exo2-Regular' }}
                                 className={styles.naviCategoriesListItem}
                                 onMouseEnter={() => { setActiveDesktopSubMenu(true) }}
@@ -97,10 +96,35 @@ function Navbar() {
             <section className={!activeDesktopSubMenu ? `${styles.desktopSubMenu}` : `${styles.desktopSubMenu} ${styles.desktopSubMenuActive}`}
                 style={discountExists ? { top: '108px' } : { top: '88px' }}
                 onMouseEnter={() => { setActiveDesktopSubMenu(true) }}
-                onMouseLeave={() => { setActiveDesktopSubMenu(false) }}>
+                onMouseLeave={() => { setActiveDesktopSubMenu(false) }}
+            >
+                <div className={styles.desktopSubMenuWrapper} style={{ fontFamily: 'Exo2-Regular' }}>
+                    {
+                        [...categoriesENG].map((item, index) => {
 
+                            return (
+                                <ul className={styles.desktopSubMenuList}>
+                                    <li className={styles.desktopSubMenuListItemMain}
+                                        key={index}>
+                                        {item.name}
+                                    </li>
+                                    {
+                                        item.subcategories.map((subItem, index) => {
+
+                                            return (
+                                                <li className={styles.desktopSubMenuListItem} key={index}>
+                                                    <a>{subItem.name}</a>
+                                                </li>
+                                            )
+                                        })
+                                    }
+                                </ul>
+                            )
+                        })
+                    }
+                </div>
             </section>
-        </nav>
+        </nav >
 
     )
 }

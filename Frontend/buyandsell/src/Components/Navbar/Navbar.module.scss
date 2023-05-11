@@ -176,6 +176,7 @@ $hoverFontColor: goldenrod;
                         height: 90px;
                         line-height: 90px;
                         cursor: pointer;
+                        user-select: none;
 
                         &:hover {
                             color: $hoverFontColor;
@@ -265,9 +266,51 @@ $hoverFontColor: goldenrod;
     .desktopSubMenu {
         display: none;
         position: fixed;
-        width: 100%;
+        width: 100vw;
         height: 400px;
         background-color: $backgroundColorTransparent;
+        // transition: display 1s linear;
+
+        .desktopSubMenuWrapper {
+            margin-left: auto;
+            margin-right: auto;
+            width: 1100px;
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+
+            .randomOfferButtonWrapper {
+                width: 200px;
+                height: 100px;
+                background-color: red;
+            }
+
+            .desktopSubMenuList {
+                list-style: none;
+                margin: 10px 0 0 20px;
+
+                .desktopSubMenuListItemMain {
+                    font-weight: 600;
+                    font-size: 28px !important;
+                    line-height: 60px;
+                    color: white;
+                    user-select: none;
+                }
+
+                .desktopSubMenuListItem {
+                    color: white;
+                    font-size: 22px;
+                    line-height: 60px;
+                    cursor: pointer;
+                    user-select: none;
+
+                    &:hover {
+                        color: $hoverFontColor;
+                    }
+                }
+            }
+        }
     }
 
     .desktopSubMenuActive {
