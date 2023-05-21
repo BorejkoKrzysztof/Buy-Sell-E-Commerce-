@@ -6,6 +6,7 @@ import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { BsPerson } from 'react-icons/bs'
 import PromotionBar from './subComponents/PromotionBar/PromotionBar'
 import { categoriesENG } from '../../Categories/ENG/CategoriesENG'
+import { RiArrowDownSLine } from 'react-icons/ri'
 
 function Navbar() {
 
@@ -23,6 +24,36 @@ function Navbar() {
         event.preventDefault()
         console.log(`szukam ${searcherInput}`)
     }
+
+    const mobileMenuItemsListElement =
+        <>
+            {
+                [...categoriesENG].map((mainCategoryItem, mainCategoryIndex) => {
+
+                    return (
+                        <div className={styles.mobileMenuSubItem} key={mainCategoryIndex}>
+                            <span className={styles.mobileMenuSubItemTitle}>
+                                {mainCategoryItem.name}
+                            </span>
+                            <div className={styles.mobileMenuSubItemsWrapper}>
+                                <ul className={styles.mobileMenuSubItemsList}>
+                                    {
+                                        [...mainCategoryItem.subcategories].map((subCategoryItem, subCategoryIndex) => {
+
+                                            return (
+                                                <li className={styles.subCategoryItemTitle} key={subCategoryIndex}>
+                                                    <a>{subCategoryItem.name}</a>
+                                                </li>
+                                            )
+                                        })
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    )
+                })
+            }
+        </>
 
     useEffect(() => {
         checkDiscount()
@@ -90,8 +121,61 @@ function Navbar() {
 
             <section className={!activeMobileMenu ? `${styles.navigationWrapper}` : `${styles.navigationWrapper} ${styles.activenNavigationWrapper}`}
                 style={discountExists ? { top: '75px' } : { top: '55px' }}>
-
+                <div className={styles.mobileMenuContent} style={{ color: 'white' }}>
+                    <div className={styles.mobileMenuMainItem}>
+                        <span className={styles.mobileMenuMainItemTitle}>
+                            Shop
+                        </span>
+                        {
+                            mobileMenuItemsListElement
+                        }
+                    </div>
+                    <div className={styles.mainMobileMenuItem}>
+                        <span className={styles.mobileMenuMainItemTitle}>
+                            Blog
+                        </span>
+                    </div>
+                    <div className={styles.mainMobileMenuItem}>
+                        <span className={styles.mobileMenuMainItemTitle}>
+                            Auctions
+                        </span>
+                        {
+                            mobileMenuItemsListElement
+                        }
+                    </div>
+                    <div className={styles.mainMobileMenuItem}>
+                        <span className={styles.mobileMenuMainItemTitle}>
+                            Sale
+                        </span>
+                        {
+                            mobileMenuItemsListElement
+                        }
+                    </div>
+                </div>
             </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <section className={!activeDesktopSubMenu ? `${styles.desktopSubMenu}` : `${styles.desktopSubMenu} ${styles.desktopSubMenuActive}`}
                 style={discountExists ? { top: '108px' } : { top: '88px' }}
@@ -103,16 +187,15 @@ function Navbar() {
                         [...categoriesENG].map((item, index) => {
 
                             return (
-                                <ul className={styles.desktopSubMenuList}>
-                                    <li className={styles.desktopSubMenuListItemMain}
-                                        key={index}>
+                                <ul className={styles.desktopSubMenuList} key={index}>
+                                    <li className={styles.desktopSubMenuListItemMain}>
                                         {item.name}
                                     </li>
                                     {
-                                        item.subcategories.map((subItem, index) => {
+                                        item.subcategories.map((subItem, index2) => {
 
                                             return (
-                                                <li className={styles.desktopSubMenuListItem} key={index}>
+                                                <li className={styles.desktopSubMenuListItem} key={index2}>
                                                     <a>{subItem.name}</a>
                                                 </li>
                                             )
