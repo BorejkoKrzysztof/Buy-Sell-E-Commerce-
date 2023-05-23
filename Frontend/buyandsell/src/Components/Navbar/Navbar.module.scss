@@ -121,16 +121,91 @@ $hoverFontColor: goldenrod;
     }
 }
 
-.navigationWrapper {
+.mobileNavigationWrapper {
     width: 100%;
     min-height: calc(100vh - 55px);
     background-color: rgba(0, 0, 0, 0.863);
     position: fixed;
     left: -110%;
     transition: 1s ease;
+
+    .mobileMenuContent {
+        color: white;
+        margin-top: 10px;
+        padding-bottom: 20px;
+        // background-color: blue;
+        height: 90vh;
+        overflow-y: scroll;
+
+        .mobileMenuMainItem {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            // background-color: red;
+
+            .mobileMenuMainItemTitle {
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 5px 0;
+
+                span {
+                    font-size: 40px;
+                    line-height: 50px;
+                    text-transform: uppercase;
+                }
+            }
+
+            .mobileMenuSubItem {
+                // background-color: rgb(141, 141, 67);
+                width: 90%;
+                margin-left: auto;
+
+
+                // gvsdjkvcjhsdbjadvbjhvadjhcV
+                // height: 0;
+                // kbeakbfjakbkhabjsabjhsdbjsh
+
+                .mobileMenuSubItemTitle {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 15px 0;
+
+                    span {
+                        font-size: 32px;
+                        line-height: 40px;
+                    }
+                }
+
+                .mobileMenuSubItemsWrapper {
+
+
+                    // sfkbkabkasbkasbc
+                    // height: 0;
+                    // background-color: silver;
+
+                    .mobileMenuSubItemsList {
+                        list-style: none;
+                        padding-bottom: 20px;
+                        margin-right: 35px;
+
+                        .subCategoryItemTitle {
+                            // background-color: pink;
+                            font-size: 26px;
+                            line-height: 35px;
+                            margin: 20px 0;
+                            text-align: end;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
-.activenNavigationWrapper {
+.activeMobileNavigationWrapper {
     left: 0;
 }
 

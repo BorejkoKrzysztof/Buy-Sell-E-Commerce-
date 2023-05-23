@@ -35,6 +35,9 @@ function Navbar() {
                             <span className={styles.mobileMenuSubItemTitle}>
                                 {mainCategoryItem.name}
                             </span>
+                            <span>
+                                <RiArrowDownSLine />
+                            </span>
                             <div className={styles.mobileMenuSubItemsWrapper}>
                                 <ul className={styles.mobileMenuSubItemsList}>
                                     {
@@ -119,38 +122,151 @@ function Navbar() {
             </section >
 
 
-            <section className={!activeMobileMenu ? `${styles.navigationWrapper}` : `${styles.navigationWrapper} ${styles.activenNavigationWrapper}`}
-                style={discountExists ? { top: '75px' } : { top: '55px' }}>
-                <div className={styles.mobileMenuContent} style={{ color: 'white' }}>
+            <section className={!activeMobileMenu ? `${styles.mobileNavigationWrapper}` : `${styles.mobileNavigationWrapper} ${styles.activeMobileNavigationWrapper}`}
+                style={discountExists ? { top: '78px' } : { top: '58px' }}>
+                <div className={styles.mobileMenuContent}>
                     <div className={styles.mobileMenuMainItem}>
-                        <span className={styles.mobileMenuMainItemTitle}>
-                            Shop
-                        </span>
-                        {
-                            mobileMenuItemsListElement
-                        }
+                        <div className={styles.mobileMenuMainItemTitle}>
+                            <span style={{ fontFamily: 'Exo2-Regular' }}>
+                                Shop
+                            </span>
+                            <span style={{ fontWeight: '900' }}>
+                                <RiArrowDownSLine />
+                            </span>
+                        </div>
+                        <>
+                            {
+                                [...categoriesENG].map((mainCategoryItem, mainCategoryIndex) => {
+
+                                    return (
+                                        <div className={styles.mobileMenuSubItem} key={mainCategoryIndex}>
+                                            <div className={styles.mobileMenuSubItemTitle}>
+                                                <span style={{ fontFamily: 'Exo2-Regular' }}>
+                                                    {mainCategoryItem.name}
+                                                </span>
+                                                <span style={{ fontWeight: '900' }}>
+                                                    <RiArrowDownSLine />
+                                                </span>
+                                            </div>
+                                            <div className={styles.mobileMenuSubItemsWrapper}>
+                                                <ul className={styles.mobileMenuSubItemsList}>
+                                                    {
+                                                        [...mainCategoryItem.subcategories].map((subCategoryItem, subCategoryIndex) => {
+
+                                                            return (
+                                                                <li className={styles.subCategoryItemTitle} key={subCategoryIndex} style={{ fontFamily: 'Exo2-Regular' }}>
+                                                                    <a>{subCategoryItem.name}</a>
+                                                                </li>
+                                                            )
+                                                        })
+                                                    }
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </>
+                    </div>
+                    {/* <div className={styles.mainMobileMenuItem}>
+                        <div className={styles.mobileMenuMainItem}>
+                            <div className={styles.mobileMenuMainItemTitle}>
+                                <span>
+                                    Blog
+                                </span>
+                            </div>
+                        </div>
                     </div>
                     <div className={styles.mainMobileMenuItem}>
-                        <span className={styles.mobileMenuMainItemTitle}>
-                            Blog
-                        </span>
+                        <div className={styles.mobileMenuMainItem}>
+                            <div className={styles.mobileMenuMainItemTitle}>
+                                <span>
+                                    Auctions
+                                </span>
+                                <span>
+                                    <RiArrowDownSLine />
+                                </span>
+                            </div>
+                            <>
+                                {
+                                    [...categoriesENG].map((mainCategoryItem, mainCategoryIndex) => {
+
+                                        return (
+                                            <div className={styles.mobileMenuSubItem} key={mainCategoryIndex}>
+                                                <div className={styles.mobileMenuSubItemTitle}>
+                                                    <span>
+                                                        {mainCategoryItem.name}
+                                                    </span>
+                                                    <span>
+                                                        <RiArrowDownSLine />
+                                                    </span>
+                                                </div>
+                                                <div className={styles.mobileMenuSubItemsWrapper}>
+                                                    <ul className={styles.mobileMenuSubItemsList}>
+                                                        {
+                                                            [...mainCategoryItem.subcategories].map((subCategoryItem, subCategoryIndex) => {
+
+                                                                return (
+                                                                    <li className={styles.subCategoryItemTitle} key={subCategoryIndex}>
+                                                                        <a>{subCategoryItem.name}</a>
+                                                                    </li>
+                                                                )
+                                                            })
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </>
+                        </div>
                     </div>
                     <div className={styles.mainMobileMenuItem}>
-                        <span className={styles.mobileMenuMainItemTitle}>
-                            Auctions
-                        </span>
-                        {
-                            mobileMenuItemsListElement
-                        }
-                    </div>
-                    <div className={styles.mainMobileMenuItem}>
-                        <span className={styles.mobileMenuMainItemTitle}>
-                            Sale
-                        </span>
-                        {
-                            mobileMenuItemsListElement
-                        }
-                    </div>
+                        <div className={styles.mobileMenuMainItem}>
+                            <div className={styles.mobileMenuMainItemTitle}>
+                                <span>
+                                    Sell
+                                </span>
+                                <span>
+                                    <RiArrowDownSLine />
+                                </span>
+                            </div>
+                            <>
+                                {
+                                    [...categoriesENG].map((mainCategoryItem, mainCategoryIndex) => {
+
+                                        return (
+                                            <div className={styles.mobileMenuSubItem} key={mainCategoryIndex}>
+                                                <div className={styles.mobileMenuSubItemTitle}>
+                                                    <span>
+                                                        {mainCategoryItem.name}
+                                                    </span>
+                                                    <span>
+                                                        <RiArrowDownSLine />
+                                                    </span>
+                                                </div>
+                                                <div className={styles.mobileMenuSubItemsWrapper}>
+                                                    <ul className={styles.mobileMenuSubItemsList}>
+                                                        {
+                                                            [...mainCategoryItem.subcategories].map((subCategoryItem, subCategoryIndex) => {
+
+                                                                return (
+                                                                    <li className={styles.subCategoryItemTitle} key={subCategoryIndex}>
+                                                                        <a>{subCategoryItem.name}</a>
+                                                                    </li>
+                                                                )
+                                                            })
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </>
+                        </div>
+                    </div> */}
                 </div>
             </section>
 
